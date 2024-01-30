@@ -41,6 +41,7 @@ header {
 .main-container-1 {
   display: flex;
   justify-content: space-between;
+  padding: 5px;
 }
 .main-container-1 .user-input {
   width: 60%;
@@ -49,7 +50,7 @@ header {
 }
 .main-container-1 .user-input input {
   width: 80%;
-  padding: 10px;
+  padding: 10px 10px;
   border: none;
   border-radius: 10px;
 }
@@ -79,7 +80,17 @@ header {
   margin-top: 10px;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 786px) {
+  .main {
+    height: fit-content;
+    width: 93%;
+    padding: 30px 20px;
+  }
+  .main-container-1 {
+    flex-direction: column-reverse;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
   .main-container-3 {
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
@@ -87,21 +98,13 @@ header {
 }
 
 @media (max-width: 496px) {
-  .main-container-1 {
-    flex-direction: column-reverse;
-    gap: 30px;
-    margin-bottom: 30px;
-  }
   .main-container-1 .user-input {
     width: 100%;
   }
   .main-container-3 {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .main {
-    height: fit-content;
-    width: 93%;
-    padding: 30px 10px;
+    padding: 30px 5px;
   }
 }
