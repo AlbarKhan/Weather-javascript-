@@ -8,7 +8,7 @@
 html,
 body {
   height: 100%;
-  background-color: #000137;
+  background-color: rgb(48, 45, 85);
 }
 
 header {
@@ -18,7 +18,6 @@ header {
 }
 
 .main-wrapper {
-  /* border: 10px solid; */
   height: 100%;
   display: flex;
   justify-content: center;
@@ -29,7 +28,7 @@ header {
   background-image: url("https://assets.msn.com/weathermapdata/1/static/images/webps/v1.0/Light%20fog.webp");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 50px 10px;
+  padding: 50px 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -39,5 +38,70 @@ header {
   border-radius: 10px;
   box-shadow: 4px 0 8px 0 rgba(0, 0, 0, 0.5);
 }
+.main-container-1 {
+  display: flex;
+  justify-content: space-between;
+}
+.main-container-1 .user-input {
+  width: 60%;
+  display: flex;
+  gap: 20px;
+}
+.main-container-1 .user-input input {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+.main-container-1 .user-input button {
+  width: 20%;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(48, 45, 85);
+  color: white;
+}
+.main-container-2 {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 50px;
+}
 
-/* https://assets.msn.com/weathermapdata/1/static/images/webps/v1.0/Light%20fog.webp */
+.main-container-2 .section-1 {
+  font-size: 42px;
+}
+
+.main-container-3 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: space-between;
+}
+.time {
+  margin-top: 10px;
+}
+
+@media (max-width: 769px) {
+  .main-container-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+  }
+}
+
+@media (max-width: 496px) {
+  .main-container-1 {
+    flex-direction: column-reverse;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  .main-container-1 .user-input {
+    width: 100%;
+  }
+  .main-container-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main {
+    height: fit-content;
+    width: 93%;
+    padding: 30px 10px;
+  }
+}

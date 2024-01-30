@@ -5,29 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <div class="main-wrapper">
       <div class="main">
         <div class="main-container-1">
-          <h3>Current Weather</h3>
-          <h4 class="time">12:30</h4>
+          <div class="title">
+            <h3><span>Mumbai</span> Current Weather</h3>
+            <h4 class="time">12:30</h4>
+          </div>
+          <div class="user-input">
+            <input
+              type="text"
+              value="Mumbai"
+              placeholder="Enter the City Name"
+            />
+            <button>Enter</button>
+          </div>
         </div>
         <div class="main-container-2">
-          <span>Icon</span>
-          <h1>28degree</h1>
+          <div class="section-1">
+            <i class="fa-regular fa-sun"></i>
+            <span class="degree">28 <sup>C</sup></span>
+          </div>
           <div>
             <h4>Smoke</h4>
-            <h3>Feels Like 25degree</h3>
+            <span style="color: rgb(170, 166, 166)">Feels Like</span>
+            <span>23</span><sup>c</sup>
           </div>
         </div>
         <div class="main-container-3">
-          <div class="stats">Air Quality</div>
-          <div class="stats">Wind</div>
-          <div class="stats">Humidity</div>
-          <div class="stats">Visibility</div>
-          <div class="stats">Pressure</div>
-          <div class="stats">Dew Point</div>
+          <div class="stats">
+            <span>
+              Air Quality
+              <sup><i class="icon fa-solid fa-circle-info"></i></sup
+            ></span>
+            <p>8km\h</p>
+          </div>
+          <div class="stats">
+            <span>
+              Wind
+              <sup><i class="icon fa-solid fa-circle-info"></i></sup
+            ></span>
+            <p>8km\h</p>
+          </div>
+          <div class="stats">
+            <span>
+              Humidity
+              <sup><i class="icon fa-solid fa-circle-info"></i></sup>
+            </span>
+            <p>8km\h</p>
+          </div>
+          <div class="stats">
+            <span>
+              Visibility
+              <sup><i class="icon fa-solid fa-circle-info"></i></sup>
+            </span>
+            <p>8km\h</p>
+          </div>
+          <div class="stats">
+            <span>
+              Pressure
+              <sup><i class="icon fa-solid fa-circle-info"></i></sup>
+            </span>
+            <p>8km\h</p>
+          </div>
+          <div class="stats">
+            <span>
+              Dew Point
+              <sup><i class="icon fa-solid fa-circle-info"></i></sup>
+            </span>
+            <p>8km\h</p>
+          </div>
         </div>
       </div>
     </div>
