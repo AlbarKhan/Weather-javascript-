@@ -27,7 +27,8 @@ const windText = document.querySelector(".wind");
 const humidityText = document.querySelector(".humidity");
 const visibilityText = document.querySelector(".visibility");
 const pressureText = document.querySelector(".pressure");
-
+const sunriseText = document.querySelector(".sunrise");
+const sunsetText = document.querySelector(".sunset");
 // weatherIcon.addEventListener("click", () => console.log("kk"));
 function displayWeather(data) {
   console.log(data);
@@ -50,11 +51,19 @@ function displayWeather(data) {
 
   // getting visibility
   const getVisibility = data.visibility / 1000;
-  console.log(getVisibility);
   visibilityText.textContent = `${getVisibility.toFixed(2)} k`;
 
   // getting Pessure
   const getPressure = data.main.pressure;
+
+  // getting Sunrise Time
+  const sunriseTime = data.sys.sunrise;
+  displayTime(sunriseTime, sunriseText);
+
+  // getting Sunset Time
+  const sunsetTime = data.sys.sunset;
+  displayTime(sunsetTime, sunsetText);
+  console.log(sunriseTime);
   pressureText.textContent = `${getPressure} hPa`;
   if (currentTemperature < 15) {
     weatherIcon.className = "fa-regular fa-snowflake";
