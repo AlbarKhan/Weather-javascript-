@@ -2,18 +2,42 @@
 
 const apiKey = "42a03fdda88fafef99ea3d19267f02eb";
 // const city = "Mumbai";
-function getWeather(cityname) {
+async function getWeather(cityname) {
   //   const city = document.getElementById("city").value;
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${apiKey}`;
 
-  fetch(apiUrl)
-    .then((response) => response.json())
-    .then((data) => {
-      displayWeather(data);
-    })
-    .catch((error) => {
-      console.error("Error fetching weather data:", error);
-    });
+  try {
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${apiKey}`;
+    const city = await fetch(apiUrl);
+    if (!city.ok) {
+      throw new Error("Please check weather the name is correct or not");
+    }
+    const cityData = await city.json();
+    displayWeather(cityData);
+  } catch (err) {
+    renderError(err.message);
+  }
+  // const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${apiKey}`;
+
+  // const city = await fetch(apiUrl);
+  // const cityData = await city.json();
+  // console.log(cityData);
+  // fetch(apiUrl)
+  //   .then((response) => {
+  //     if (!response.ok)
+  //       throw new Error(`Cannot Find  ${cityname} in any Country  `);
+  //     return response.json();
+  //   })
+  //   .then((data) => {
+  //     displayWeather(data);
+  //   })
+  //   .catch((error) => {
+  //     // console.error("Error fetching weather data:", error.message);
+  //     renderError(error.message);
+  //   });
+}
+
+function renderError(errmsg = "Something Went Wrong") {
+  alert(errmsg);
 }
 
 const city = document.querySelector(".city");
@@ -30,6 +54,7 @@ const pressureText = document.querySelector(".pressure");
 const sunriseText = document.querySelector(".sunrise");
 const sunsetText = document.querySelector(".sunset");
 // weatherIcon.addEventListener("click", () => console.log("kk"));
+
 function displayWeather(data) {
   console.log(data);
   // getting current Temperature
